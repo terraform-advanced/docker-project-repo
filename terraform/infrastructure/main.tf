@@ -1,5 +1,23 @@
-############################
-resource "google_service_account" "service_account" {
-  account_id   = var.account_id
-  display_name = var.display_name
+resource "google_storage_bucket" "auto-expire" {
+  name          = "auto-expiring-bucket-2024-03-14"
+  location      = "US"
+  force_destroy = true
+
+  lifecycle_rule {
+    condition {
+      age = 3
+    }
+    action {
+      type = "Delete"
+    }
+  }
+
+  lifecycle_rule {
+    condition {
+      age = 1
+    }
+    action {
+      type = "AbortIncompleteMultipartUpload"
+    }
+  }
 }
