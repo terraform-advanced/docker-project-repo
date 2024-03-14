@@ -1,7 +1,7 @@
 
 #######
 resource "google_storage_bucket" "auto-expire" {
-  name          = "auto-expiring-bucket-2024-03-15"
+  name          = "auto-expiring-bucket-2024-03-16"
   location      = "US"
   force_destroy = true
 
