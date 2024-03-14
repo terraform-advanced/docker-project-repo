@@ -3,7 +3,7 @@ terraform {
     organization = "Terraform-advance-demo"
 
     workspaces {
-      name = "mohit-project-repo"
+      name = "docker-project-repo"
     }
   }
 }
